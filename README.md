@@ -1,5 +1,5 @@
 # Pizza-contest
-Pizza order app for psi contest for UAM students
+Pizza order app for PSI contest for UAM students
 
 # Used technologies
 
