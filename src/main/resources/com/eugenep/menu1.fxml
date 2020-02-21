@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane fx:id="rootAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eugenep.controller.MenuController">
+   <children>
+      <AnchorPane fx:id="mainMenuPane" layoutX="-1.0" maxWidth="-Infinity" prefHeight="532.0" prefWidth="318.0" style="-fx-background-color: #232f34;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="menuButton" layoutX="10.0" layoutY="174.0" prefHeight="52.0" prefWidth="246.0" style="-fx-background-color: #f9aa33;" text="Menu" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/baseline_menu_book_black_48dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cartButton" layoutX="10.0" layoutY="250.0" prefHeight="52.0" prefWidth="246.0" style="-fx-background-color: #f9aa33;" text="Koszyk" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <ImageView fx:id="cartImageView" fitHeight="44.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/baseline_local_grocery_store_black_48dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="instructionLabel" alignment="CENTER" layoutX="35.0" layoutY="108.0" prefHeight="47.0" prefWidth="247.0" text="Label" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="267.0" layoutY="28.0" prefHeight="504.0" prefWidth="582.0" style="-fx-background-color: #464646;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+         <children>
+            <Pane fx:id="orderPane" prefHeight="504.0" prefWidth="582.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fx:id="orderControlsVbox" alignment="CENTER" layoutX="165.0" layoutY="304.0" prefHeight="154.0" prefWidth="268.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="removePizzaButton" text="Usuń z listy">
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/baseline_remove_circle_black_48dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="goToFinalScreenButton" text="Przejdź do menu dostawy">
+                           <graphic>
+                              <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/baseline_done_outline_black_48dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <Label fx:id="myOrderLabel" layoutX="240.0" layoutY="14.0" text="Moje zamówienie" />
+                  <JFXListView fx:id="myOrderListView" layoutX="8.0" layoutY="43.0" prefHeight="247.0" prefWidth="567.0">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding></JFXListView>
+               </children>
+            </Pane>
+            <Pane fx:id="menuPane" prefHeight="504.0" prefWidth="582.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="priceLabel" layoutX="350.0" layoutY="424.0" prefHeight="75.0" prefWidth="212.0" text="PRICE">
+                     <font>
+                        <Font size="47.0" />
+                     </font></Label>
+                  <VBox fx:id="topperVBox" alignment="CENTER_LEFT" layoutX="354.0" layoutY="41.0" prefHeight="361.0" prefWidth="212.0" />
+                  <Label fx:id="topperLabel" alignment="CENTER" layoutX="20.0" layoutY="323.0" prefHeight="99.0" prefWidth="280.0" style="-fx-background-color: #232f34;" text="Lista składników" textFill="#fdf9f9" />
+                  <JFXListView fx:id="pizzaMenuList" layoutX="20.0" layoutY="41.0" prefHeight="281.0" prefWidth="280.0" />
+                  <JFXRadioButton fx:id="radioThin" layoutX="19.0" layoutY="18.0" style="-jfx-selected-color: #f9aa33; -jfx-unselected-color: #232f34;" text="Ciasto cienkie" />
+                  <JFXRadioButton fx:id="radioThick" layoutX="178.0" layoutY="18.0" style="-jfx-selected-color: #f9aa33; -jfx-unselected-color: #232f34;" text="Ciasto grube" />
+                  <JFXButton fx:id="addPizzaButton" alignment="CENTER" layoutX="20.0" layoutY="424.0" prefHeight="75.0" prefWidth="280.0" text="Dodaj do koszyka">
+                     <graphic>
+                        <ImageView fitHeight="43.0" fitWidth="337.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/baseline_add_circle_outline_black_48dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="finalPane" layoutY="28.0" prefHeight="504.0" prefWidth="900.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+         <children>
+            <ChoiceBox fx:id="deliveryChoiceBox" layoutX="87.0" layoutY="99.0" prefHeight="39.0" prefWidth="226.0" style="-fx-background-color: #f9aa33;" />
+            <Label fx:id="finalPriceLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="452.0" layoutY="99.0" prefHeight="135.0" prefWidth="341.0" style="-fx-background-color: #fff;" text="FinalPrice" textFill="#232f34">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="goBackButton" layoutX="30.0" layoutY="18.0" prefHeight="47.0" prefWidth="114.0" style="-fx-background-color: #f9aa33;" text="Wróć">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/baseline_arrow_back_ios_black_48dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXCheckBox fx:id="studentDiscountCheck" checkedColor="#f9aa33" layoutX="93.0" layoutY="195.0" prefHeight="39.0" prefWidth="236.0" text="Tak, jestem studentem" textFill="#232f34">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXCheckBox>
+            <Label fx:id="finalPriceDescriptionLabel" layoutX="452.0" layoutY="57.0" prefHeight="39.0" prefWidth="161.0" text="Cena zamówienia:" textFill="#232f34">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutY="294.0" prefHeight="231.0" prefWidth="900.0" style="-fx-background-color: #232f34;">
+               <children>
+                  <JFXButton fx:id="finishAndPayButton" prefHeight="135.0" prefWidth="700.0" style="-fx-background-color: #f9aa33;" text="Zamów">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <HBox alignment="TOP_RIGHT" layoutX="8.0" layoutY="-4.0" prefHeight="33.0" prefWidth="900.0" style="-fx-background-color: #232f34;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="closeButton" prefHeight="59.0" prefWidth="5.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/baseline_close_white_48dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
