@@ -19,7 +19,7 @@ add a student discount.
 # Setup
 You need maven + java 11
 
-Open CMD on the project directory and write
+Open CMD in the project directory and write
 ```
 mvn clean install && mvn javafx:run
 ```
